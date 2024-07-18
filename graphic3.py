@@ -1,21 +1,16 @@
 from turtle import *
-import colorsys
+import colorsys as cs
 
-t = Turtle()
-s = Screen()
-s.bgcolor("black")
-t.speed(0)
+bgcolor("black")
+speed(0)
+h = 0.7
 
-n =37
-h = 0
-
-for i in range(480):
-    c = colorsys.hsv_to_rgb(
-        h, 1, 1
-        )
-    h += 1/n
-    t.color(c)
-    t.left(30)
-    for j in range(5):
-        t.forward(70)
-        t.left(10)
+for i in range(100):
+    c = cs.hsv_to_rgb(h, 1, 1)
+    h += 0.001
+    goto(0, 0)
+    color(c)
+    circle(i, 90)
+    circle(100)
+left(10)
+done()
